@@ -1,11 +1,16 @@
 # QR factorization
 
 ## 1st Step
-[?geqrf][https://software.intel.com/en-us/node/468944]
+Compute `R`, and implicit `Q`
 
-[?geqpf][https://software.intel.com/en-us/node/468952]
+[?geqrf](https://software.intel.com/en-us/node/468944)
+
+[?geqpf](https://software.intel.com/en-us/node/468952) 
+Deprecated.
 
 ## 2nd Step
-[?orgqr][https://software.intel.com/en-us/node/468956]
+Compute `Q` explicitly from the first step
 
-[?ungrq][https://software.intel.com/en-us/node/468960]
+[?orgqr](https://software.intel.com/en-us/node/468956)
+
+[?ungrq](https://software.intel.com/en-us/node/468960)
