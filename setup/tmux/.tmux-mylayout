@@ -1,0 +1,13 @@
+#!/usr/bin/fish
+
+if not test -z (tmux list-panes -F '#F' | grep Z)
+  exit
+end
+
+if test -e $HOME/.my_laptop
+  tmux resize-pane -t 1 -x 80
+else
+  tmux resize-pane -t 1 -x 110
+end
+
+tmux resize-pane -t 2 -y 10 -x 30
