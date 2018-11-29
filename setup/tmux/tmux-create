@@ -1,0 +1,19 @@
+#!/usr/bin/fish
+
+if test -z $TMUX
+  echo Not in a tmux session
+  exit
+end
+
+if [ (tmux list-panes | wc -l) -ge 2 ]
+  echo Already a foramted session
+  exit
+end
+
+tmux split-window -h -l 110 -b
+tmux split-window -l 10 -t 1
+tmux split-window -h -l 30 -t 2 -b
+tmux clock-mode -t 2
+tmux select-pane -t 3
+tmux select-pane -t 1
+tmux select-pane -t 4
