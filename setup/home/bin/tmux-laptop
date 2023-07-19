@@ -1,0 +1,3 @@
+#!/usr/bin/fish
+
+touch $HOME/.my_laptop
