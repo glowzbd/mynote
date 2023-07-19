@@ -1,0 +1,5 @@
+#!/usr/bin/fish
+
+if test -e $HOME/.my_laptop
+  rm $HOME/.my_laptop
+end
