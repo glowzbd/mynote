@@ -1,0 +1,26 @@
+#!/usr/bin/fish
+
+if not test -z (tmux list-panes -F '#F' | grep Z)
+  exit
+end
+
+if test (tmux list-panes | wc -l) -lt 5
+  exit
+end
+
+if test -e $HOME/.stop_tmux_size
+  exit
+end
+
+if test -e $HOME/.my_laptop
+  tmux resize-pane -t 1 -x 82
+else
+  tmux resize-pane -t 1 -x 110
+end
+
+# clock window
+tmux resize-pane -t 3 -y 8 -x 30
+
+# todo window
+tmux resize-pane -t 1 -y (math (tmux display -p '#{window_height}') - 20)
+
