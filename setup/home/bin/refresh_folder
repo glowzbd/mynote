@@ -1,0 +1,7 @@
+#!/usr/bin/fish
+
+for i in (seq (tmux list-panes | wc -l) )
+  tmux send -t $i cd  Enter
+  tmux send -t $i "cd -"  Enter
+end
+tmux clock-mode -t 3
